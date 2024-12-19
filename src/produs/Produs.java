@@ -36,5 +36,19 @@ public Produs(String name, double price, int stock) {
         else System.out.println("Cantitatea trebuie sa fie mai mare decit 0.");
 
      }
+     //Metoda pentru a aplica un discount
+     public void addDiscount(double precent){
+        if (precent>0 & precent<=100) {
+            price -= price*(precent/100);
+            System.out.println("Discount de " + precent + " % aplicat. 
+            Pret actual: " + price);
+        }
+        else System.out.println("Procentul rebuie sa fie intre 0 si 100 ");
+     }
+     //Metoda pentru a afisa un produs
+     public void showDetails(){
+        System.out.println("Produsul: " + name + ", Pretul: " + price + ", 
+        Stocul: " + stock);
+     }
 
 }
