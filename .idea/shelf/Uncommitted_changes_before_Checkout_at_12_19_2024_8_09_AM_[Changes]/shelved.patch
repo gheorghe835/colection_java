@@ -1,0 +1,52 @@
+Index: src/produs/Produs.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package produs;\r\n\r\npublic class Produs {\r\n   /*  Clasa Produs\r\nCreează o clasă Produs cu atribute: nume (String), pret (double), stoc (int).\r\nAdaugă metode pentru a crește și a scădea stocul.\r\nAdaugă o metodă pentru a aplica un discount asupra prețului.*/\r\nString name;\r\ndouble price;\r\nint stock;\r\npublic Produs(String name, double price, int stock) {\r\n    this.name = name;\r\n    this.price = price;\r\n    this.stock = stock;\r\n}\r\n     // Metodă pentru a crește stocul\r\n     public void upStock(int cantitate) {\r\n        if (cantitate > 0) {\r\n            stock += cantitate;\r\n            System.out.println(\"Stocul a fost crescut cu \" + cantitate + \". Stoc actual: \" + stock);\r\n        } else {\r\n            System.out.println(\"Cantitatea trebuie să fie mai mare decât 0.\");\r\n        }\r\n     \r\n     }\r\n     //Metoda pentru a scadea stocul\r\n     public void downStock(int cantitate){\r\n        if (cantitate>0 & cantitate<stock) {\r\n            stock -= cantitate;\r\n            System.out.println(\"Stocul a fost scazut cu \" + cantitate\r\n            + \". Stocul actual: \" + stock);\r\n        }\r\n        else if(cantitate>stock){\r\n            System.out.println(\"Stoc insuficient. Stoc actual: \" + stock);\r\n        }\r\n        else System.out.println(\"Cantitatea trebuie sa fie mai mare decit 0.\");\r\n\r\n     }\r\n     //Metoda pentru a aplica un discount\r\n     public void addDiscount(double precent){\r\n        if (precent>0 & precent<=100) {\r\n            price -= price*(precent/100);\r\n            System.out.println(\"Discount de \" + precent + \" % aplicat. \r\n            Pret actual: \" + price);\r\n        }\r\n        else System.out.println(\"Procentul rebuie sa fie intre 0 si 100 \");\r\n     }\r\n     //Metoda pentru a afisa un produs\r\n     public void showDetails(){\r\n        System.out.println(\"Produsul: \" + name + \", Pretul: \" + price + \", \r\n        Stocul: \" + stock);\r\n     }\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/produs/Produs.java b/src/produs/Produs.java
+--- a/src/produs/Produs.java	
++++ b/src/produs/Produs.java	
+@@ -40,15 +40,13 @@
+      public void addDiscount(double precent){
+         if (precent>0 & precent<=100) {
+             price -= price*(precent/100);
+-            System.out.println("Discount de " + precent + " % aplicat. 
+-            Pret actual: " + price);
++            System.out.println("Discount de " + precent + " % aplicat. Pret actual: " + price);
+         }
+         else System.out.println("Procentul rebuie sa fie intre 0 si 100 ");
+      }
+      //Metoda pentru a afisa un produs
+      public void showDetails(){
+-        System.out.println("Produsul: " + name + ", Pretul: " + price + ", 
+-        Stocul: " + stock);
++        System.out.println("Produsul: " + name + ", Pretul: " + price + ", Stocul: " + stock);
+      }
+ 
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e4cad950-44e1-485b-aaac-dd7d34ee3541\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2pzSRzQnE707ee83N7eXr0ztXbC\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/IdeaProjects/git_java_test.idea&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e4cad950-44e1-485b-aaac-dd7d34ee3541\" name=\"Changes\" comment=\"\" />\r\n      <created>1733767408778</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1733767408778</updated>\r\n      <workItem from=\"1733767409894\" duration=\"2741000\" />\r\n      <workItem from=\"1733811986420\" duration=\"154000\" />\r\n      <workItem from=\"1733842482867\" duration=\"2000\" />\r\n      <workItem from=\"1733853261654\" duration=\"88000\" />\r\n      <workItem from=\"1733938493716\" duration=\"1566000\" />\r\n      <workItem from=\"1733982136564\" duration=\"3206000\" />\r\n      <workItem from=\"1734116268831\" duration=\"34000\" />\r\n      <workItem from=\"1734497617072\" duration=\"8893000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -20,7 +20,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="main" />
++        <entry key="$PROJECT_DIR$" value="master" />
+       </map>
+     </option>
+   </component>
+@@ -61,7 +61,7 @@
+       <workItem from="1733938493716" duration="1566000" />
+       <workItem from="1733982136564" duration="3206000" />
+       <workItem from="1734116268831" duration="34000" />
+-      <workItem from="1734497617072" duration="8893000" />
++      <workItem from="1734497617072" duration="9510000" />
+     </task>
+     <servers />
+   </component>
